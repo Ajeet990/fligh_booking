@@ -1,0 +1,15 @@
+A] For users.
+	1] User will search for flights according to date, source and destination.
+	2] All the filght that will be available will list down in users screen.
+	3] User can book the flight and do the payments.
+
+B] For admin (Flight owner)
+	1] Admin can add as many flight as he wants.
+	2] Admin can see the bookings for a specific flight.
+	3] Admin can edit flight details, its price, flight name etc.
+	4] Admin can schedule the flight.
+
+C] For super admin.
+	1] Super admin can add, update and delete airports.
+	2] Super admin can see all the bookings on a specific date.
+	3] 

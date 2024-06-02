@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sno </th>
+                    <th>City name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of cityList; let sr = index">
+                    <td>{{sr + 1}}</td>
+                    <td>{{city.cityName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

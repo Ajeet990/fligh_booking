@@ -1,0 +1,24 @@
+How to use toastr
+
+1] npm install @angular/animations ngx-toastr toastr
+2] import in angular.json
+	"styles": [
+              "src/styles.css",
+              "./node_modules/toastr/build/toastr.min.css",
+              "./node_modules/ngx-toastr/toastr.css"
+            ],
+
+	"scripts": [
+              "node_modules/toastr/build/toastr.min.js"
+            ]
+3] app.config.ts
+	import { provideAnimations } from '@angular/platform-browser/animations';
+
+  	providers: [
+    		provideToastr(),
+    		provideAnimations()
+  	]
+4] where do you want to use toast in that .ts file
+  a] import { ToastrService } from 'ngx-toastr';
+  b] toastr = inject(ToastrService)
+  c] this.toastr.error("Please fill all the fields", "Error")
