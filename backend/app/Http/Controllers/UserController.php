@@ -39,7 +39,13 @@ class UserController extends Controller
                 return response()->json([
                     'success' => true,
                     'message' => 'Login success',
-                    'token' => JWT::encode($payload, env('JWT_SECRET'), env('JWT_ALGORITHM'))
+                    // 'role' => $user->role,
+                    'data' => [
+                        'role' => $user->role,
+                        'name' => $user->name,
+                        'email' => $user->email,
+                        'token' => JWT::encode($payload, env('JWT_SECRET'), env('JWT_ALGORITHM'))
+                    ]
                 ]);
             } else {
                 throw new \Exception('Password wrong.');

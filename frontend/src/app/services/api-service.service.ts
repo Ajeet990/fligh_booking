@@ -17,4 +17,8 @@ export class ApiServiceService {
   register(registerData : any) {
     return this.http.post(`${this.apiUrl}register`, registerData)
   }
+
+  login(loginData : any) {
+    return this.http.post(`${this.apiUrl}login`, loginData)
+  }
 }

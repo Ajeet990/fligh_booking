@@ -13,7 +13,7 @@ import { RegisterComponent } from './components/admin/register/register.componen
 export const routes: Routes = [
     {
         path:'',
-        redirectTo:'search',
+        redirectTo:'login',
         pathMatch:'full'
     },
     {
