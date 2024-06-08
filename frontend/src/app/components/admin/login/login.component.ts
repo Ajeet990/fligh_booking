@@ -42,18 +42,22 @@ export class LoginComponent {
       this.apiService.login(loginData).subscribe({
         next:(res:any) => {
           this.toastr.clear()
-          if (res.success && (res.data.role !='' || res.data.role != undefined)) {
+          if (res.success && res.data.role !='' && res.data.role != undefined) {
+            localStorage.setItem("userInfo",JSON.stringify(res.data))
+            this.toastr.success(res.message)
+            this.setUserDetails(res.data)
             if (res.data.role == 1) {
-              this.router.navigateByUrl('/vendor')
-              this.toastr.success(res.message)
-              this.setUserDetails(res.data)
+              this.router.navigateByUrl('/admin/profile')
+              // this.toastr.success(res.message)
+              // this.setUserDetails(res.data)
             } else if (res.data.role == 2) {
               this.router.navigateByUrl('/search')
-              this.toastr.success(res.message)
-              this.setUserDetails(res.data)
-            } else if (res.data.role == 0) {
-              this.toastr.success("Super admin.")
-              this.toastr.success(res.message)
+              // this.toastr.success(res.message)
+              // this.setUserDetails(res.data)
+            } else if (res.data.role == 3) {
+              this.router.navigateByUrl('/superadmin/all_vendors')
+              // this.toastr.success(res.message)
+              // this.setUserDetails(res.data)
             } else {
               this.toastr.error("Invalid user")
             }
@@ -70,7 +74,7 @@ export class LoginComponent {
   }
 
   setUserDetails(userData:any) {
-    console.log(userData)
+    console.log("inside login comp",userData)
     this.shareData.userDetails.next({
       name:userData.name,
       email:userData.email,

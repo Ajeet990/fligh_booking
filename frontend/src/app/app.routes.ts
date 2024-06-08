@@ -9,6 +9,10 @@ import { BookingComponent } from './components/admin/booking/booking.component';
 import { NewFlightComponent } from './components/admin/new-flight/new-flight.component';
 import { LoginComponent } from './components/admin/login/login.component';
 import { RegisterComponent } from './components/admin/register/register.component';
+import { AllVendorsComponent } from './components/superadmin/all-vendors/all-vendors.component';
+import { NewVendorsComponent } from './components/superadmin/new-vendors/new-vendors.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { MyFlightComponent } from './components/admin/my-flight/my-flight.component';
 
 export const routes: Routes = [
     {
@@ -43,24 +47,47 @@ export const routes: Routes = [
     },
     {
         path:'admin',
-        component:LayoutComponent,
         children:[
             {
-                path:'airport',
-                component:AirportComponent
+                path:'profile',
+                component:ProfileComponent
             },
             {
-                path:'city',
-                component:CityComponent
+                path:'my_flight',
+                component:MyFlightComponent
+            },
+            // {
+            //     path:'airport',
+            //     component:AirportComponent
+            // },
+            // {
+            //     path:'city',
+            //     component:CityComponent
+            // },
+            // {
+            //     path:'all-booking',
+            //     component:BookingComponent
+            // },
+            // {
+            //     path:'new-flight',
+            //     component:NewFlightComponent
+            // },
+        ]
+    },
+    {
+        path:'superadmin',
+        children:[
+            {
+                path:'all_vendors',
+                component:AllVendorsComponent,
+                title:'All vendors'
             },
             {
-                path:'all-booking',
-                component:BookingComponent
-            },
-            {
-                path:'new-flight',
-                component:NewFlightComponent
+                path:'new_vendors',
+                component:NewVendorsComponent,
+                title:'New vendors'
             },
         ]
     }
+
 ];

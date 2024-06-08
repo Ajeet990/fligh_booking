@@ -19,4 +19,14 @@ export class ShareService {
     token:'',
     role:''
   })
+
+  headerDetail = new BehaviorSubject<{
+    normalUser : boolean,
+    vendorUser : boolean,
+    superUser : boolean
+  }>({
+    normalUser : false,
+    vendorUser : false,
+    superUser : false
+  })
 }

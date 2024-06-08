@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand"><i class="bi bi-airplane"></i>&nbsp;Vendor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/admin/profile" >Profile</a>
+          <!-- here profile of a vendor(flight ownwer will be visible)
+          will show total number of flights that a vendor have
+          means overall detail of a flight  -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/admin/my_flight">My flights</a>
+          <!-- here on first load it will show uplcoming flights
+          there will be a button that will show completed flights
+          there will be a button that will show detail of a particular flight -->
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+              <a class="nav-link active" routerLinkActive="active" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" routerLinkActive="active" routerLink="/login">Login</a>
+          </li> -->
+          <li class="nav-item">
+              <a class="nav-link active" routerLinkActive="active" (click)="logoutVendor()">LogOut</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <router-outlet></router-outlet> -->

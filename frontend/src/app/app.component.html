@@ -1,3 +1,5 @@
 <!-- <button class="btn btn-primary">click</button>-->
-<app-layout></app-layout>
+<app-super-header *ngIf="super"></app-super-header>
+<app-vendor-header *ngIf="vendor"></app-vendor-header>
+<app-layout *ngIf="normal"></app-layout>
 <router-outlet></router-outlet>
